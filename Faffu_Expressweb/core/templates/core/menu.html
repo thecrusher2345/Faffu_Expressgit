@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fafu-Express</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js" 
+    integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    
+<!-- header section starts      -->
+
+<header>
+
+    <a href="#" class="logo"><i class="fas fa-utensils"></i>Fafu express</a>
+
+    <nav class="navbar">
+        <a class="active" href="#home">Inicio</a>
+        <!--<a href="#dishes">Platos</a>-->
+        <a href="#about">sobre nosotros</a>
+        <a href="#menu">Menu</a>
+        <a href="{% url 'registro' %}">Registrar</a>
+        <a href="{% url 'logout' %}">Salir</a>
+        <a href="#order">Ordenar</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+        <a href="#" class="fas fa-heart"></a>
+        <a href="#" class="fas fa-shopping-cart"></a>
+    </div>
+
+</header>
+
+
+<form action="" id="search-form">
+    <input type="search" placeholder="search here..." name="" id="search-box">
+    <label for="search-box" class="fas fa-search"></label>
+    <i class="fas fa-times" id="close"></i>
+</form>
+
+
+<!-- Especiales   -->
+<section class="home" id="home">
+
+    <div class="swiper-container home-slider">
+
+        <div class="swiper-wrapper wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Platos especiales</span>
+                    <h3>Fideo picante</h3>
+                    <p>fideos chinos picantes con aceite de ajo y chile brindan un gran sabor</p>
+                    <a href="#" class="btn">Ordenar</a>
+                </div>
+                <div class="image">
+                    <img src="{% static 'core/images/home-img-1.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Platos especiales</span>
+                    <h3>Pollo frito</h3>
+                    <p>Pollo frito crujiente ¡con una cobertura exterior deliciosa!</p>
+                    <a href="#" class="btn">Ordenar</a>
+                </div>
+                <div class="image">
+                    <img src="{% static 'core/images/home-img-2.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Platos especiales</span>
+                    <h3>hot pizza</h3>
+                    <p>Una pizza con un exquisito chile en polvo para compartir con amigos!</p>
+                    <a href="#" class="btn">Ordenar</a>
+                </div>
+                <div class="image">
+                    <img src="{% static 'core/images/home-img-3.png' %}" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+
+
+<!-- Platos populares  -->
+<section class="dishes" id="dishes">
+
+    <h3 class="sub-heading">Nuestros Platos </h3>
+    <h1 class="heading"> Populares </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-1.png' %}" alt="">
+            <h3>Hamburguesa</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$1.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-2.png' %}" alt="">
+            <h3>Croquetas</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$7.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-3.png' %}" alt="">
+            <h3>Pollo</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$15.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-4.png' %}" alt="">
+            <h3>Pizza</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$15.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-5.png' %}" alt="">
+            <h3>Postre</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$1.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+        <div class="box">
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-eye"></a>
+            <img src="{% static 'core/images/dish-6.png' %}" alt="">
+            <h3>Pernil de pollo</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span>$8.99</span>
+            <a href="#" class="btn">Añadir al carrito</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Nosotros  -->
+<section class="about" id="about">
+
+    <h3 class="sub-heading"> Sobre Nosotros</h3>
+    <h1 class="heading">¿Por qué escogernos? </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="{% static 'core/images/about-img.png' %}" alt="">
+        </div>
+
+        <div class="content">
+            <h3>La mejor comida de la ciudad</h3>
+            <p>Estamo dandole a nuestro publico un servicio muy rapido al momento de la entrega haciendo honor a nuestro nombre</p>
+            <div class="icons-container">
+                <div class="icons">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Delivery gratis</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Pago fácil</span>
+                </div>
+                <div class="icons">
+                    <i class="fas fa-headset"></i>
+                    <span>Servicio 24/7</span>
+                </div>
+            </div>
+            <a href="#" class="btn">Más</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- menu  -->
+<section class="menu" id="menu">
+
+    <h3 class="sub-heading"> Nuestros </h3>
+    <h1 class="heading"> Menús especiales </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-1.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Pizza de Tocino</h3>
+                <p>Piazza normal acompañda con un crujiente tocino!</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$12.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-2.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Hamburguesa</h3>
+                <p>Una jugosa y freca Hamburguesa hecha a la parrilla </p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$1.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-3.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Arepa Dulce</h3>
+                <p>Deliciosa arepa con un sabroso relleno ducle</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$3.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-4.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Waffle de Helado</h3>
+                <p>Acompañado de un cremoso helado!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$12.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-5.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Postre de Chocolate</h3>
+                <p>Hecho con un chocolate fino de aroma!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$5.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-6.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Hot Cake</h3>
+                <p>Los Hot Cake mas esponjosos que existen!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$12.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-7.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Agua de Sabores</h3>
+                <p>Demacido refrescante como para ser verdad!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$1.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-8.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Avena con fruta</h3>
+                <p>Hecho con frutas frescas y la mejor avena que tenemos!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$6.99</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="image">
+                <img src="{% static 'core/images/menu-9.jpg' %}" alt="">
+                <a href="#" class="fas fa-heart"></a>
+            </div>
+            <div class="content">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <h3>Limonada</h3>
+                <p>Para un dia de calor no cae mal una limonada!.</p>
+                <a href="#" class="btn">Añadir al carrito</a>
+                <span class="price">$1.00</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Orden -->
+
+<section class="order" id="order">
+
+    <h3 class="sub-heading"> ¡Ordena Ahora! </h3>
+    <h1 class="heading"> Y seremos más rápidos que tu ex</h1>
+
+    <!-- oredennew -->
+    <div class="form">
+    <div class="form-toggle"></div>
+    <div class="form-header">
+    <h1>Ingrese su orden</h1>
+    </div>
+    <div class="form-content">
+    <form  id="formulario" class="formulario" method="POST">
+        <div class="form-group">
+        <label for="link">Nombre</label>
+        <input type="text" id="link" placeholder="Ingresar Nombre sin espacios" name="link">
+        </div>
+        <div class="form-group">
+        <label for="numero">Numero</label>
+        <input  id="numero" type="number" placeholder="enter your number">
+        </div>
+        <div class="form-group">
+        <label for="fecha_hora">Fecha y hora</label>
+        <input id="fecha_hora" type="datetime-local">
+        </div>
+        <div class="form-group">
+        <label for="cantidad">Cantidad</label>
+        <input id="cantidad" type="number" placeholder="Cuántas ordenes">
+        </div>
+        <div class="form-group">
+        <label for="direccion">Direccion</label>
+        <textarea name="" placeholder="Ingrese su Dirección" id="direccion" cols="30" rows="10"></textarea>
+        </div>
+        <div class="form-group">
+        <label for="comentario">Comentarios</label>
+        <textarea name="" placeholder="Especificaciones extras" id="comentario" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn">Ordenar ahora</button>
+    </form>
+
+    <div class="input">Codigo Generado:</div>
+
+    <div  id="contenedorQR" class="contenedorQR"></div>
+    </div>
+
+    </div>
+    
+
+
+</section>
+
+
+
+<!-- footer   -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Locación</h3>
+            <a href="#">Ecuador-Portoviejo</a>
+          
+        </div>
+
+
+        <div class="box">
+            <h3>Info Contactos</h3>
+            <a href="#">+593 99 736 0304</a>
+            <a href="#">+593 99 453 8638</a>
+            <a href="#">+593 98 933 5946</a>
+            <a href="#">+593 98 916 9862</a>
+            <a href="#">+593 979197701</a>
+            <a href="#">mloor@utm.edu.ec</a>
+        </div>
+
+        <div class="box">
+            <h3>Siguenos en nuestras cuentas oficiales</h3>
+            <a href="#">facebook</a>
+            <a href="#">twitter</a>
+            <a href="#">instagram</a>
+            <a href="#">linkedin</a>
+        </div>
+
+    </div>
+
+    <div class="credit"> copyright @ 2022 by <span>Web_Express UTM</span> </div>
+
+</section>
+
+
+
+<!-- loader  -->
+<div class="loader-container">
+    <img src="{% static 'core/images/loader.gif' %}" alt="">
+</div>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'core/js/script.js' %}"></script>
+<script  defer src="{% static 'core/js/qrcode.js' %}"></script>
+</body>
+</html>

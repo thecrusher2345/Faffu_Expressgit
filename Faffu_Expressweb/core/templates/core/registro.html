@@ -1,0 +1,54 @@
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+<div class="form">
+<div class="form-panel one">
+    <div class="form-header">
+    <h1>Register Account</h1>
+    </div>
+    <div class="form-content">
+    <form action="#" method="post">
+    {% csrf_token %}
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible" role="alert">
+            <div id="form_errors">
+                {% for key, value in form.errors.items %}
+                <strong>{{ value }}</strong>
+                {% endfor %}
+            </div>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close" >
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label for="name">Nombre <span>*</span></label>
+            <input type="text" name="{{ form.first_name.name }}" id="name" value="" size="22">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name <span>*</span></label>
+            <input type="text" name="{{ form.last_name.name}}" id="last_name" value="" size="22">
+        </div>
+        <div class="form-group">
+        <label for="name">Username<span>*</span></label>
+        <input id="username" type="text" name="{{ form.username.name }}" required="required"/>
+        </div>
+        <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="{{ form.password1.name }}" required="required"/>
+        </div>
+        <div class="form-group">
+        <label for="cpassword">Confirm Password</label>
+        <input id="cpassword" type="password" name="{{ form.password2.name }}" required="required"/>
+        </div>
+        <div class="form-group">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" name="{{ form.email.name }}" required="required"/>
+        </div>
+        <div class="form-group">
+        <button type="submit">Register</button>
+        <p>¿Ya tienes una cuenta? Ingresa <a href="{% url 'login' %}"> Aquí </a></p>
+        </div>
+    </form>
+    </div>
+</div>
